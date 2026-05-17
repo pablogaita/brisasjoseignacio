@@ -89,6 +89,10 @@ tr:last-child td{border-bottom:none}
 .map-preview{display:block;position:relative;max-width:760px;margin:0 auto 1.5rem;border:1px solid var(--border2);border-radius:10px;overflow:hidden;background:var(--bg1);box-shadow:0 18px 50px rgba(0,0,0,.36);text-decoration:none;isolation:isolate}
 .tbl-wrap + .map-preview{margin-top:1.5rem}
 .map-preview img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}
+.map-preview iframe{display:block;width:100%;aspect-ratio:16/9;border:0;filter:saturate(.9) contrast(.98) brightness(.78);pointer-events:none;background:var(--bg1)}
+.map-embed-wrap{cursor:default}
+.map-embed-wrap .map-preview-btn{text-decoration:none}
+
 .map-preview::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.42));z-index:1;transition:background .2s}
 .map-preview-btn{position:absolute;left:50%;top:50%;z-index:2;transform:translate(-50%,-50%);display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:.75rem 1.1rem;border:1px solid rgba(122,184,216,.42);border-radius:7px;background:rgba(3,13,24,.88);color:#d4e8f8;font-size:12px;font-weight:500;letter-spacing:.3px;font-family:var(--mono);backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s,border-color .2s,background .2s;white-space:nowrap}
 .map-preview:hover::after{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.34))}
@@ -298,11 +302,12 @@ footer p{font-size:11.5px;color:var(--text3);font-family:var(--mono)}
 </tbody>
 </table>
 </div>
-<a aria-label="Open interactive market comparables map in a new tab" class="map-preview" href="https://www.google.com/maps/d/viewer?mid=190Qr5A6VTC8AR6jCYvb7w-pEUktFUNY" rel="noopener" target="_blank">
-<img alt="Market comparables map for Brisas de José Ignacio" onerror="this.style.display='none';this.parentElement.querySelector('.map-fallback').style.display='flex'" src="https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v12/static/-54.657,-34.868,12,0/760x427?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"/>
-<div class="map-fallback" style="display:none;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#051524,#0a2040);align-items:center;justify-content:center;flex-direction:column;gap:8px"><span style="font-size:28px">🗺️</span><span style="font-size:13px;color:#7a9ab8;font-family:var(--mono)"><bdi data-en="José Ignacio · Uruguay" data-es="José Ignacio · Uruguay" data-i18n="José Ignacio · Uruguay" data-it="José Ignacio · Uruguay">José Ignacio · Uruguay</bdi></span><span style="font-size:11px;color:#3a5a74;font-family:var(--mono)">-34.868, -54.657</span></div>
-<span class="map-preview-btn"><bdi data-en="Open interactive map" data-es="Abrir mapa interactivo" data-i18n="Abrir mapa interactivo" data-it="Apri mappa interattiva">Open interactive map</bdi></span>
+<div aria-label="Interactive market comparables map preview" class="map-preview map-embed-wrap">
+<iframe aria-hidden="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/d/embed?mid=190Qr5A6VTC8AR6jCYvb7w-pEUktFUNY&amp;ehbc=2E312F" title="Brisas de José Ignacio market comparables map preview"></iframe>
+<a class="map-preview-btn" href="https://www.google.com/maps/d/viewer?mid=190Qr5A6VTC8AR6jCYvb7w-pEUktFUNY" rel="noopener" target="_blank">
+<bdi data-en="Open interactive map" data-es="Abrir mapa interactivo" data-i18n="Abrir mapa interactivo" data-it="Apri mappa interattiva">Open interactive map</bdi>
 </a>
+</div>
 </div>
 <!-- LOTES -->
 <div class="sec" id="lotes">
